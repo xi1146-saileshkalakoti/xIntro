@@ -1,0 +1,42 @@
+@import 'mixins.scss';
+@import 'pallete.scss';
+
+#thingsToRemember {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    width: 100%;
+    padding: 2%;
+
+    >.content {
+        display: grid;
+        grid-template-rows: 20% 80%;
+        align-items: center;
+
+        >.heading {
+            font-size: 40px;
+            color: $dark-orange;
+            font-weight: bolder;
+        }
+
+        .things {
+            align-self: flex-start;
+            margin-bottom: 50px;
+            padding: 10px 20px 10px;
+            overflow-y: auto;
+            max-height: 540px;
+
+            .thing {
+                @include thing;
+            }
+        }
+    }
+
+    >.graphic {
+        padding-left: 40px;
+        padding-top: 80px;
+
+        img {
+            height: 85%;
+        }
+    }
+}

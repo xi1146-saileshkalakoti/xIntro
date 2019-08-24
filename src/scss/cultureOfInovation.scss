@@ -1,0 +1,35 @@
+@import 'pallete.scss';
+
+#cultureOfInovation {
+    display: flex;
+    background-image: url('../assets/images/culture.png');
+    width: 100%;
+    background-size: cover;
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        position: absolute;
+    }
+
+    >.content {
+        display: grid;
+        grid-template-rows: 20% 80%;
+        position: relative;
+        padding: 0px 50px;
+
+        .heading {
+            font-size: 70px;
+            font-weight: bolder;
+            color: $light-grey;
+            align-self: flex-end;
+        }
+
+        .cultureList {
+            padding-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 33.33%);
+        }
+    }
+}

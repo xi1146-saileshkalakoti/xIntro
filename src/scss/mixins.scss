@@ -1,0 +1,81 @@
+@import 'pallete.scss';
+
+@mixin heading {
+    .heading {
+        color: $xebia-purple;
+        font-weight: bolder;
+        font-size: 25px;
+    }
+}
+
+$colors: (orange: $orange,
+dark-orange: $dark-orange,
+xebia-purple: $xebia-purple,
+grey: $grey,
+green: $green);
+
+@mixin gen-props($prefix, $property, $opacity) {
+
+    @each $color-name,
+    $color in $colors {
+        .#{$prefix}-#{$color-name} {
+            #{$property}: rgba($color, $opacity);
+
+            &:hover {
+                #{$property}: rgba($color, 0.8)
+            }
+        }
+    }
+}
+
+
+@mixin topHeaderWithImageAndText($imageURL, $maxWidth:300px) {
+    .hero {
+        height: 40%;
+        background-image: url($imageURL);
+        background-position: center;
+        display: flex;
+        align-items: center;
+
+        .born {
+            display: flex;
+            align-items: center;
+            padding: 0px 0px 0px 60px;
+            font-size: 80px;
+            width: 100%;
+            height: 100%;
+            font-weight: bolder;
+            color: $white;
+            background-color: rgba(0, 0, 0, 0.35);
+
+            >div {
+                max-width: $maxWidth;
+            }
+
+        }
+    }
+}
+
+
+@mixin thing {
+    display: grid;
+    box-shadow: 0px 0px 20px 0px rgba($black, 0.10);
+    border-radius: 10px;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+    padding: 3%;
+    grid-template-rows: 20% 80%;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    .heading {
+        color: $xebia-purple;
+    }
+
+    .content {
+        color: $grey;
+        line-height: 25px;
+    }
+}

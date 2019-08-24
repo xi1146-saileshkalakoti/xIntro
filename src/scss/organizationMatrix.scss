@@ -1,0 +1,167 @@
+@import './pallete.scss';
+
+#organizationMatrix {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 20% 80%;
+    padding: 0px 0px 10px 30px;
+
+    .heading {
+        display: flex;
+        font-size: 40px;
+        align-items: center;
+        font-weight: bolder;
+        color: $dark-orange;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 2% 3% 95%;
+
+        >.coes {
+            color: $dark-orange;
+            display: grid;
+            grid-template-rows: 13% 87%;
+
+            div {
+                &:nth-child(2) {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    background-color: $new-grey;
+                    border-radius: 10px;
+
+                    >div {
+                        transform: rotate(-90deg);
+
+                    }
+                }
+
+            }
+        }
+
+        >.matrix {
+            display: grid;
+            grid-template-rows: 8% repeat(3, 18%) 38%;
+
+            .row {
+                color: $xebia-purple;
+                display: grid;
+                grid-template-columns: repeat(1, 30%) repeat(5, 1fr);
+                border-bottom: 1px dashed $new-grey;
+
+                &:first-child,
+                &:last-child,
+                &:nth-child(1) {
+                    border: 0;
+                }
+
+                .white {
+                    color: $white;
+                }
+
+                .home {
+                    background-color: $new-grey;
+                }
+
+                .project-row {
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+                .no-border {
+                    border: 0;
+                }
+
+                >div {
+                    border-left: 1px solid $new-grey;
+
+
+
+                    &:nth-child(3) {
+                        border-left: 0px;
+                    }
+                }
+
+                .departments {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 10px 0px;
+
+                    .head {
+                        color: $grey;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .projects {
+                >div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            .header {
+                border-radius: 5px;
+                border-bottom-right-radius: 0px;
+                border-top-right-radius: 0px;
+                background: rgb(106, 32, 95);
+                background: linear-gradient(30deg, rgba(106, 32, 95, 1) 55%, rgba(228, 80, 14, 1) 100%);
+
+                >div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.wings {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 5px;
+    margin-top: 15px;
+
+    >div {
+        display: grid;
+        font-size: 12px;
+        grid-template-columns: 40% 60%;
+
+        div {
+            &:last-child {
+                color: $grey;
+            }
+        }
+    }
+}
+
+
+.xebian {
+    position: absolute;
+    z-index: 99999;
+
+    img {
+        height: 80px;
+    }
+}
+
+.project-row {
+    &:hover {
+        background-color: rgba($light-grey, 0.2)
+    }
+}

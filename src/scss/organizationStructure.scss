@@ -1,0 +1,100 @@
+@import 'pallete.scss';
+#organisationStructure {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#organization_tree{
+    position: relative;
+};
+
+.blur-tree{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+#organization_details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba($black, $alpha: 0.4);
+    .details{
+        background-color:$white;
+        height: 20%;
+        display: grid;
+        grid-template-rows: 20% 80%;
+        width:95%;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+        .heading{
+            font-size: 2rem;
+            font-family: 'Avenir';
+            font-weight: bold;
+            color: $xebia-purple;
+        }
+        .people{
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(4,25%);
+            .hr{
+                border-left: 1px solid $dark-grey;
+                padding-left: 50px;
+                height: 90%;
+                align-self: center;
+                .heading{
+                    font-size: 1.2rem;
+                    font-family: 'Avenir';
+                    color: $black;
+                    font-weight: 400;
+                }
+                >.details{
+                    display: grid;
+                    grid-row-gap: 30px;
+                    padding-left:5px;
+                    .hr-detail{
+                        display: grid;
+                        grid-template-columns: repeat(3,33.33%);
+                        color: $orange;
+                        div:first-child{
+                            color: $black;
+                        }
+                    }
+                }
+            }
+            .person{
+                display: grid;
+                align-items: center;
+                grid-template-columns: 30% 70%;
+                .photo{
+                    border-radius: 50%;
+                    height: 100px;
+                }
+                .profile{
+                    padding: 30px 0px;
+                    display: grid;
+                    grid-template-rows: 50% 50%;
+                    grid-row-gap: 10px;
+                    .name{
+                        font-size: 20px;
+                    }
+                    .designation{
+                        font-size: 15px;
+                        color: $orange;
+                    }
+                }
+            }
+            
+        }
+    }    
+}
+

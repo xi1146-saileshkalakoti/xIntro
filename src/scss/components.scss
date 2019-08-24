@@ -1,0 +1,18 @@
+@import 'pallete.scss';
+.organization{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 150px;
+    box-shadow: 1px 0px 12px 0px $grey;
+    .name{
+        margin-left: 5%;
+        padding-top: 3px;
+    }
+    img{
+        width: 25%;
+    }
+}

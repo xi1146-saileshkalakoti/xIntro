@@ -1,0 +1,65 @@
+@import 'pallete.scss';
+
+#home {
+    display: flex;
+    flex-direction: column;
+    background-color: $base-color;
+    width: 100%;
+
+    .text {
+        position: relative;
+        padding-left: 4%;
+        z-index: 1;
+        margin-top: 3.5%;
+
+        h1 {
+            font-weight: bold;
+            line-height: 20px;
+            font-size: 50px;
+            color: $xebia-purple;
+        }
+
+        .subheading {
+            color: $grey;
+            width: 30%;
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    .backdrop {
+        position: absolute;
+        width: 100%;
+        transform: scaleX(-1);
+        padding-top: 4%;
+        height: -webkit-fill-available;
+    }
+
+    .start-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        margin-top:auto;
+        padding-bottom: 2.5%;
+        padding-left: 2.5%;
+
+        >div {
+            display: flex;
+            color: $xebia-purple;
+            justify-content: center;
+            align-items: center;
+            width: 15%;
+            border: 2px solid $xebia-purple;
+            background-color: $white;
+            height: 50px;
+            border-radius: 30px;
+            box-shadow: 3px 3px 6px 0px $xebia-purple;
+            font-weight: lighter;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

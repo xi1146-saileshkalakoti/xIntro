@@ -1,0 +1,96 @@
+@import 'pallete.scss';
+@import 'mixins.scss';
+
+$values-circle-radius:150px;
+
+@mixin subheading {
+    line-height: 25px;
+    color: $grey;
+}
+
+#bornInNetherlands {
+    display: flex;
+    flex-direction: column;
+    background-color: $base-color;
+    width: 100%;
+
+    @include topHeaderWithImageAndText('../assets/images/netherlands.png');
+
+    .content {
+        height: 60%;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        padding: 2% 60px;
+
+        .c1 {
+            display: grid;
+            grid-template-rows: 30% 70%;
+
+            .introduction {
+                @include subheading()
+            }
+
+            padding-right: 4%;
+
+            .offices {
+                @include heading();
+
+                .list {
+                    margin-top: 5%;
+                    display: grid;
+                    grid-template-columns: repeat(3, 33.33%);
+                    height: 28%;
+
+                }
+            }
+        }
+
+        .c2 {
+            display: flex;
+            flex-direction: column;
+            padding-left: 4%;
+            @include heading();
+
+            .subheading {
+                margin-top: 1%;
+                @include subheading();
+            }
+
+            .value-container-adjuster {
+                width: 100%;
+                height: 100%;
+                padding: 3% 0% 0% 0%;
+                display: flex;
+
+                .value-container {
+                    width: 50%;
+                    height: 65%;
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    grid-template-rows: 50% 50%;
+                    @include gen-props('bg', 'background', 0.7);
+
+                    .value {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: $values-circle-radius;
+                        height: $values-circle-radius;
+                        border-radius: 50%;
+
+                        .text {
+                            color: $white;
+                            word-break: normal;
+                            max-width: 84px;
+                            text-align: center;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

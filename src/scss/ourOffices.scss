@@ -1,0 +1,17 @@
+@import 'pallete.scss';
+
+.office {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    >img {
+        width: 40%;
+    }
+
+    >div {
+        color: $grey;
+    }
+
+}
