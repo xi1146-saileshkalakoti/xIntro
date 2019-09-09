@@ -1,8 +1,8 @@
 @import 'pallete.scss';
 @import 'mixins.scss';
 
-$values-circle-radius:150px;
-
+$values-circle-x-radius:calc(100vw*0.1098);
+$values-circle-y-radius:calc(100vh*0.1953);
 @mixin subheading {
     line-height: 25px;
     color: $grey;
@@ -74,8 +74,8 @@ $values-circle-radius:150px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        width: $values-circle-radius;
-                        height: $values-circle-radius;
+                        width: $values-circle-x-radius;
+                        height: $values-circle-y-radius;
                         border-radius: 50%;
 
                         .text {

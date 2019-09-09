@@ -97,4 +97,18 @@
         }
     }    
 }
+@media  screen and (max-width: 1400px) {
+    /* insert styles here */
 
+#organization_details{
+    .details{
+        .people{
+            .person{
+                .photo{
+                    height: 70px;
+                }
+            }
+        }
+    }
+}
+}

@@ -42,16 +42,16 @@ function wrap(textWordToBreak, width) {
 
 const initTree = () => {
 
-    const nodeWidth = 220;
-    const nodeHeight = 50;
-    const lengthOfLine = 20;
-    const horizontalSeparationBetweenNodes = 16;
-    const verticalSeparationBetweenNodes = 128;
-    var previousSelection = "";
     const screenWidth = window.innerWidth;
-    const widthOffset = screenWidth*0.5;
     const screenHeight = window.innerHeight;
-    const heightOffset = screenHeight*0.21;
+    const nodeWidth = 0.1180*screenWidth;
+    const nodeHeight = 0.06*screenHeight;
+    const lengthOfLine = 20;
+    const horizontalSeparationBetweenNodes = 0.0083*screenWidth;
+    const verticalSeparationBetweenNodes = 0.1185*screenHeight;
+    var previousSelection = "";
+    const widthOffset = screenWidth*0.45;
+    const heightOffset = screenHeight*0.10;
     const svg = d3.select("#organization_tree")
         .append("svg")
         .attr("width", window.outerWidth)
@@ -105,15 +105,30 @@ const initTree = () => {
         .text((d) => d.data.name)
         .attr("text-anchor", "middle")
         .attr("y", (d) => nodeHeight / 2)
-        .attr("x", (d) => 140)
-        .call(wrap, 110);
+        .attr("x", (d) => 0.0729*screenWidth)
+        .attr("font-size", (d)=>{
+            if (screenWidth < 1050)
+                return '10px';
+            else
+                if (screenWidth < 1200)
+                    return '11px';
+                else
+                    if (screenWidth < 1400)
+                        return '13px';
+                    else
+                        if (screenWidth < 1600)
+                            return '15px';
+                        else
+                            return '17px';
+        })
+        .call(wrap, nodeWidth/1.8);
 
     svg.selectAll("g")
         .append("image")
-        .attr("x", (d) => nodeWidth / 2 - 85)
+        .attr("x", (d) => nodeWidth / 2 - 0.0442*screenWidth)
         .attr("xlink:href", (d) => d.data.logo)
-        .attr("height", "50px")
-        .attr("width", "50px");
+        .attr("height", 0.0462*screenHeight+"px")
+        .attr("width", 0.0260*screenWidth+"px");
         
     svg.selectAll("g").on("click", function(x, y) {
         document.getElementById("organization_details").style.display = "";
