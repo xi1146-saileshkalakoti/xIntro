@@ -1,0 +1,77 @@
+@import "./pallete.scss";
+@import "./mixins.scss";
+
+#probationPeriod {
+  width: 100%;
+  .bg {
+    background: white;
+    height: 100vh;
+    position: fixed;
+    & > div:first-child {
+      & > img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+    & > div:last-child {
+      width: 100%;
+      height: 350px;
+      position: absolute;
+      top: 0;
+      background: #00000091;
+    }
+  }
+  main {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    & > .content {
+      display: grid;
+      grid-template-rows: 175px auto;
+      .header {
+        font-size: 60px;
+        font-weight: bold;
+        color: white;
+        padding: 40px 60px;
+        @include large {
+          padding: 60px;
+        }
+      }
+      & > div:last-child {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include large {
+          display: grid;
+          grid-template-columns: 30% 30% 30%;
+          justify-content: space-between;
+          padding: 20px 60px;
+        }
+        & > div {
+          min-height: 250px;
+          @include medium {
+            max-width: 350px;
+          }
+          margin: 20px;
+          clip-path: polygon(
+            50% 0%,
+            100% 25%,
+            100% 75%,
+            50% 100%,
+            0% 75%,
+            0% 25%
+          );
+          background: linear-gradient(30deg, #6a205f 55%, #e4500e 100%);
+          color: whitesmoke;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 20px;
+          padding: 30px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

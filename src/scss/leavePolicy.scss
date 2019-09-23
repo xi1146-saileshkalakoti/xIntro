@@ -1,0 +1,85 @@
+@import "pallete.scss";
+@import "mixins.scss";
+
+#leavePolicy {
+  width: 100%;
+  background: white;
+  .header-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    background-color: $xebia-purple;
+    clip-path: ellipse(61% 40% at 50% 0%);
+    height: 100vh;
+    min-height: 100px;
+    @include medium {
+      min-height: 150px;
+    }
+    @include large {
+      min-height: 250px;
+    }
+    header {
+      padding: 1.5% 0px 0px 60px;
+      font-weight: bolder;
+      color: #e4500e;
+      height: fit-content;
+      font-size: 48px;
+      @include medium {
+        font-size: 60px;
+      }
+      @include large {
+        font-size: 80px;
+      }
+    }
+    .x-logo {
+      background-image: url("../assets/images/X.png");
+    }
+  }
+  main {
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-rows: 75px auto 20px;
+    min-height: 100vh;
+    width: 100%;
+    @include medium {
+      grid-template-rows: 100px auto;
+    }
+    @include large {
+      grid-template-rows: 150px auto;
+    }
+    .leave-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-row-gap: 10px;
+      padding: 25px;
+    }
+  }
+
+  .leave-detail {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 30px;
+    & > li {
+      display: flex;
+      flex-direction: column;
+      list-style-type: circle;
+      min-width: 250px;
+      flex-grow: 1;
+      & > p {
+        display: flex;
+        flex-direction: column;
+        & > mark {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  footer {
+    color: $grey;
+    padding: 20px;
+    margin: 0px 30px 20px 30px;
+  }
+}

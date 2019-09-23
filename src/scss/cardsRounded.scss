@@ -1,0 +1,22 @@
+@import "pallete.scss";
+
+.card {
+  list-style-type: none;
+  display: inline-block;
+  height: inherit;
+  margin: 0 30px;
+  box-shadow: 0px 0px 20px 0px rgba($black, 0.1);
+  display: flex;
+  background-color: white;
+  color: $grey;
+  padding: 20px;
+  border-radius: 30px;
+  p {
+    display: flex;
+    flex-direction: column;
+    & > span,
+    img {
+      margin-top: 5px;
+    }
+  }
+}
